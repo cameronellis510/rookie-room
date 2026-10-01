@@ -30,7 +30,7 @@ SEASON = 2026
 LEAGUE_NAME = "The Rookie Room"
 
 ROOT = Path(__file__).parent
-DOCS = ROOT / "docs"
+DOCS = ROOT  # site is served from the repo root
 ESPN_URL = (
     "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/"
     "{season}/segments/0/leagues/{league_id}"
@@ -291,7 +291,7 @@ def scrub(obj):
 # ---------------------------------------------------------------- Render
 
 def render(data, copy, fragment=False):
-    env = Environment(loader=FileSystemLoader(ROOT / "templates"),
+    env = Environment(loader=FileSystemLoader(ROOT),
                       autoescape=select_autoescape(["html", "j2"]))
     archive_path = DOCS / "archive.json"
     archive = json.loads(archive_path.read_text()) if archive_path.exists() else []
