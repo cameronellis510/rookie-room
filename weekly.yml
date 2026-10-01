@@ -1,0 +1,44 @@
+name: Weekly newsletter
+
+on:
+  schedule:
+    # Tuesdays at 12:00 UTC = 8:00 AM Eastern (7 AM after DST ends). MNF is final by then.
+    - cron: "0 12 * * 2"
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Week number (blank = latest completed)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Generate newsletter
+        env:
+          AI_PROVIDER: ${{ vars.AI_PROVIDER || 'openai' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+        run: |
+          if [ -n "${{ github.event.inputs.week }}" ]; then
+            python newsletter.py --week "${{ github.event.inputs.week }}"
+          else
+            python newsletter.py
+          fi
+      - name: Commit and publish
+        run: |
+          git config user.name "rookie-room-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs
+          git diff --cached --quiet || git commit -m "Newsletter update"
+          git push

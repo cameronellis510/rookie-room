@@ -1,0 +1,26 @@
+{
+  "headline": "The Draft Board Was a Lie",
+  "intro": "Three weeks in, ESPN's draft-day projections have been exposed. The team picked to finish dead last is the only undefeated team in the league, and the team picked to win it all hasn't won a game. Somebody at ESPN owes us an apology.",
+  "recaps": [
+    {"game": 0, "title": "A 1.28 point crime scene",
+     "body": "The Rowdy Gentlemen put up 180.14, the fifth best score of the week, and lost by 1.28 points. That score beats three other teams this week. It did not beat the one team it had to. The Gators stay perfect and Daniel stays 0-3 with the kind of loss you think about at red lights."},
+    {"game": 1, "title": "Apostles preach, Combatants sit in the back row",
+     "body": "Agosto's Apostles dropped 182.18 and handled Cam's Combatants by 39. Cameron has made 43 lineup moves this season, more than anyone else in the league by a mile, and this week none of them mattered. Taylor is now 2-1 and talking like it."},
+    {"game": 2, "title": "The Dawgs bite, the Dak Pics flop",
+     "body": "Dave's Dirty Dawgs posted 198.14, second best on the week, and buried Unsolicited Dak Pics by almost 60. Blake's 138.68 was the lowest score in the league. Draft day had this team at number one. The pictures were unsolicited and so, apparently, was the optimism."},
+    {"game": 3, "title": "The Cartel collects",
+     "body": "The Cartel hung 214.44 on Space Cadets, the high score of the week and a 73 point beatdown. Angel now leads the league in points for, and he's done it with one pickup all season. Gregory opened the year with 241 in Week 1 and has lost two straight since. Houston, we have a problem."}
+  ],
+  "awards": [
+    {"name": "Heartbreak of the Week", "team": "The Rowdy Gentlemen",
+     "blurb": "Lost by 1.28 points. One more catch from anybody and this is a different newsletter."},
+    {"name": "Draft Day Prophecy Watch", "team": "Percful Gators",
+     "blurb": "Projected to finish eighth. Currently 3-0 and sitting at the top. The algorithm is in shambles."},
+    {"name": "Set It and Forget It", "team": "The Cartel",
+     "blurb": "One waiver pickup all year, most points in the league. Some of us are working way too hard."},
+    {"name": "Basement Tenant", "team": "Unsolicited Dak Pics",
+     "blurb": "Lowest score of the week and the most points allowed on the season. Bad and unlucky is a rough combo."}
+  ],
+  "power_take": "The Gators are the only unbeaten team, but The Cartel is scoring like the best team in the league and it isn't close. Four teams are bunched at 2-1, but don't get comfortable, Dave. The Dirty Dawgs are 8-13 in all-play, the luckiest record in the league by far. At the bottom, the Rowdy Gentlemen and Unsolicited Dak Pics are both 0-3 with matching 5-16 all-play marks, so at least the schedule isn't the only thing to blame.",
+  "signoff": "Set your lineups. Some of you more than others."
+}

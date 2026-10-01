@@ -1,0 +1,435 @@
+{
+ "members": [
+  {
+   "id": "owner-1",
+   "firstName": "Gregory"
+  },
+  {
+   "id": "owner-2",
+   "firstName": "Cameron"
+  },
+  {
+   "id": "owner-3",
+   "firstName": "Angel"
+  },
+  {
+   "id": "owner-4",
+   "firstName": "Daniel"
+  },
+  {
+   "id": "owner-5",
+   "firstName": "David"
+  },
+  {
+   "id": "owner-6",
+   "firstName": "R"
+  },
+  {
+   "id": "owner-7",
+   "firstName": "Taylor"
+  },
+  {
+   "id": "owner-8",
+   "firstName": "Blake"
+  }
+ ],
+ "teams": [
+  {
+   "id": 1,
+   "name": "Space Cadets",
+   "abbrev": "SC",
+   "primaryOwner": "owner-1",
+   "draftDayProjectedRank": 6,
+   "record": {
+    "overall": {
+     "wins": 1,
+     "losses": 2,
+     "ties": 0,
+     "pointsFor": 500.7,
+     "pointsAgainst": 568.68,
+     "streakType": "LOSS",
+     "streakLength": 2
+    }
+   },
+   "transactionCounter": {
+    "acquisitions": 4,
+    "moveToActive": 12,
+    "trades": 0
+   }
+  },
+  {
+   "id": 2,
+   "name": "Cam's Combatants",
+   "abbrev": "CC",
+   "primaryOwner": "owner-2",
+   "draftDayProjectedRank": 7,
+   "record": {
+    "overall": {
+     "wins": 2,
+     "losses": 1,
+     "ties": 0,
+     "pointsFor": 473.42,
+     "pointsAgainst": 431.4,
+     "streakType": "LOSS",
+     "streakLength": 1
+    }
+   },
+   "transactionCounter": {
+    "acquisitions": 10,
+    "moveToActive": 43,
+    "trades": 1
+   }
+  },
+  {
+   "id": 3,
+   "name": "The Cartel",
+   "abbrev": "TC",
+   "primaryOwner": "owner-3",
+   "draftDayProjectedRank": 3,
+   "record": {
+    "overall": {
+     "wins": 2,
+     "losses": 1,
+     "ties": 0,
+     "pointsFor": 597.76,
+     "pointsAgainst": 498.0,
+     "streakType": "WIN",
+     "streakLength": 2
+    }
+   },
+   "transactionCounter": {
+    "acquisitions": 1,
+    "moveToActive": 12,
+    "trades": 0
+   }
+  },
+  {
+   "id": 4,
+   "name": "The Rowdy Gentlemen",
+   "abbrev": "Dan",
+   "primaryOwner": "owner-4",
+   "draftDayProjectedRank": 5,
+   "record": {
+    "overall": {
+     "wins": 0,
+     "losses": 3,
+     "ties": 0,
+     "pointsFor": 421.92,
+     "pointsAgainst": 470.96,
+     "streakType": "LOSS",
+     "streakLength": 3
+    }
+   },
+   "transactionCounter": {
+    "acquisitions": 2,
+    "moveToActive": 8,
+    "trades": 0
+   }
+  },
+  {
+   "id": 5,
+   "name": "Dave's Dirty Dawgs",
+   "abbrev": "DDD",
+   "primaryOwner": "owner-5",
+   "draftDayProjectedRank": 2,
+   "record": {
+    "overall": {
+     "wins": 2,
+     "losses": 1,
+     "ties": 0,
+     "pointsFor": 444.0,
+     "pointsAgainst": 435.06,
+     "streakType": "WIN",
+     "streakLength": 1
+    }
+   },
+   "transactionCounter": {
+    "acquisitions": 4,
+    "moveToActive": 4,
+    "trades": 0
+   }
+  },
+  {
+   "id": 6,
+   "name": "Percful Gators",
+   "abbrev": "PFG",
+   "primaryOwner": "owner-6",
+   "draftDayProjectedRank": 8,
+   "record": {
+    "overall": {
+     "wins": 3,
+     "losses": 0,
+     "ties": 0,
+     "pointsFor": 547.56,
+     "pointsAgainst": 435.88,
+     "streakType": "WIN",
+     "streakLength": 3
+    }
+   },
+   "transactionCounter": {
+    "acquisitions": 3,
+    "moveToActive": 12,
+    "trades": 1
+   }
+  },
+  {
+   "id": 7,
+   "name": "Agosto's Apostles",
+   "abbrev": "AA",
+   "primaryOwner": "owner-7",
+   "draftDayProjectedRank": 4,
+   "record": {
+    "overall": {
+     "wins": 2,
+     "losses": 1,
+     "ties": 0,
+     "pointsFor": 505.52,
+     "pointsAgainst": 510.66,
+     "streakType": "WIN",
+     "streakLength": 2
+    }
+   },
+   "transactionCounter": {
+    "acquisitions": 10,
+    "moveToActive": 11,
+    "trades": 0
+   }
+  },
+  {
+   "id": 8,
+   "name": "Unsolicited Dak Pics",
+   "abbrev": "UDP",
+   "primaryOwner": "owner-8",
+   "draftDayProjectedRank": 1,
+   "record": {
+    "overall": {
+     "wins": 0,
+     "losses": 3,
+     "ties": 0,
+     "pointsFor": 441.28,
+     "pointsAgainst": 581.52,
+     "streakType": "LOSS",
+     "streakLength": 3
+    }
+   },
+   "transactionCounter": {
+    "acquisitions": 3,
+    "moveToActive": 8,
+    "trades": 0
+   }
+  }
+ ],
+ "schedule": [
+  {
+   "id": 1,
+   "matchupPeriodId": 1,
+   "home": {
+    "teamId": 1,
+    "totalPoints": 241.4
+   },
+   "away": {
+    "teamId": 7,
+    "totalPoints": 167.96
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 2,
+   "matchupPeriodId": 1,
+   "home": {
+    "teamId": 5,
+    "totalPoints": 134.16
+   },
+   "away": {
+    "teamId": 4,
+    "totalPoints": 115.56
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 3,
+   "matchupPeriodId": 1,
+   "home": {
+    "teamId": 8,
+    "totalPoints": 131.42
+   },
+   "away": {
+    "teamId": 2,
+    "totalPoints": 144.1
+   },
+   "winner": "AWAY"
+  },
+  {
+   "id": 4,
+   "matchupPeriodId": 1,
+   "home": {
+    "teamId": 3,
+    "totalPoints": 144.04
+   },
+   "away": {
+    "teamId": 6,
+    "totalPoints": 185.32
+   },
+   "winner": "AWAY"
+  },
+  {
+   "id": 5,
+   "matchupPeriodId": 2,
+   "home": {
+    "teamId": 7,
+    "totalPoints": 155.38
+   },
+   "away": {
+    "teamId": 4,
+    "totalPoints": 126.22
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 6,
+   "matchupPeriodId": 2,
+   "home": {
+    "teamId": 2,
+    "totalPoints": 186.28
+   },
+   "away": {
+    "teamId": 1,
+    "totalPoints": 117.8
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 7,
+   "matchupPeriodId": 2,
+   "home": {
+    "teamId": 6,
+    "totalPoints": 180.82
+   },
+   "away": {
+    "teamId": 5,
+    "totalPoints": 111.7
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 8,
+   "matchupPeriodId": 2,
+   "home": {
+    "teamId": 3,
+    "totalPoints": 239.28
+   },
+   "away": {
+    "teamId": 8,
+    "totalPoints": 171.18
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 9,
+   "matchupPeriodId": 3,
+   "home": {
+    "teamId": 3,
+    "totalPoints": 214.44
+   },
+   "away": {
+    "teamId": 1,
+    "totalPoints": 141.5
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 10,
+   "matchupPeriodId": 3,
+   "home": {
+    "teamId": 7,
+    "totalPoints": 182.18
+   },
+   "away": {
+    "teamId": 2,
+    "totalPoints": 143.04
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 11,
+   "matchupPeriodId": 3,
+   "home": {
+    "teamId": 6,
+    "totalPoints": 181.42
+   },
+   "away": {
+    "teamId": 4,
+    "totalPoints": 180.14
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 12,
+   "matchupPeriodId": 3,
+   "home": {
+    "teamId": 5,
+    "totalPoints": 198.14
+   },
+   "away": {
+    "teamId": 8,
+    "totalPoints": 138.68
+   },
+   "winner": "HOME"
+  },
+  {
+   "id": 13,
+   "matchupPeriodId": 4,
+   "home": {
+    "teamId": 1,
+    "totalPoints": 0
+   },
+   "away": {
+    "teamId": 2,
+    "totalPoints": 0
+   },
+   "winner": "UNDECIDED"
+  },
+  {
+   "id": 14,
+   "matchupPeriodId": 4,
+   "home": {
+    "teamId": 3,
+    "totalPoints": 0
+   },
+   "away": {
+    "teamId": 4,
+    "totalPoints": 0
+   },
+   "winner": "UNDECIDED"
+  },
+  {
+   "id": 15,
+   "matchupPeriodId": 4,
+   "home": {
+    "teamId": 5,
+    "totalPoints": 0
+   },
+   "away": {
+    "teamId": 6,
+    "totalPoints": 0
+   },
+   "winner": "UNDECIDED"
+  },
+  {
+   "id": 16,
+   "matchupPeriodId": 4,
+   "home": {
+    "teamId": 7,
+    "totalPoints": 0
+   },
+   "away": {
+    "teamId": 8,
+    "totalPoints": 0
+   },
+   "winner": "UNDECIDED"
+  }
+ ],
+ "status": {
+  "currentMatchupPeriod": 4
+ }
+}
