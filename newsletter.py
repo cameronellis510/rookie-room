@@ -35,7 +35,13 @@ ESPN_URL = (
     "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/"
     "{season}/segments/0/leagues/{league_id}"
 )
-BENCH_SLOTS = {20, 21}  # 20 = bench, 21 = IR
+BENCH_SLOTS = {20, 21}
+
+# What everyone actually calls each owner, by ESPN team id.
+# Use this when someone's ESPN profile name is wrong or blank.
+OWNER_NAMES = {
+    6: "Tate",  # Percful Gators (ESPN profile just says "R")
+}  # 20 = bench, 21 = IR
 
 
 # ---------------------------------------------------------------- ESPN
@@ -83,7 +89,7 @@ def build_week(league, box, week):
     teams = {}
     for t in league["teams"]:
         owner = members.get(t.get("primaryOwner"), {})
-        first = clean(owner.get("firstName")).title()
+        first = OWNER_NAMES.get(t["id"]) or clean(owner.get("firstName")).title()
         rec = t["record"]["overall"]
         teams[t["id"]] = {
             "id": t["id"],
@@ -138,6 +144,11 @@ def build_week(league, box, week):
             "winner_players": players(win), "loser_players": players(lose),
         })
 
+    upcoming = []
+    for m in schedule:
+        if m["matchupPeriodId"] == week + 1 and "away" in m:
+            upcoming.append({"home": teams[m["home"]["teamId"]], "away": teams[m["away"]["teamId"]]})
+
     scores = weekly.get(week, {})
     week_scores = sorted(({"team": teams[t], "pts": round(p, 2)} for t, p in scores.items()),
                          key=lambda x: -x["pts"])
@@ -161,6 +172,7 @@ def build_week(league, box, week):
         "closest": min(games, key=lambda g: g["margin"]) if games else None,
         "blowout": max(games, key=lambda g: g["margin"]) if games else None,
         "standings": standings,
+        "upcoming": upcoming,
         "playoff_teams": (league.get("settings") or {}).get("scheduleSettings", {}).get("playoffTeamCount"),
     }
 
@@ -229,6 +241,12 @@ def facts_for_ai(data):
                      f"draft-day projected finish {t['draft_rank']}, "
                      f"season pickups {t['acquisitions']}, lineup moves {t['lineup_moves']}, trades {t['trades']}, "
                      f"this week: {this_week.get(t['id'], 'n/a')}")
+    if data["upcoming"]:
+        lines += ["", f"NEXT WEEK (Week {data['week'] + 1}) MATCHUPS:"]
+        for i, u in enumerate(data["upcoming"]):
+            a, b = u["home"], u["away"]
+            lines.append(f"  [{i}] {a['name']} ({a['owner']}, {a['wins']}-{a['losses']}, PF {a['pf']}) vs "
+                         f"{b['name']} ({b['owner']}, {b['wins']}-{b['losses']}, PF {b['pf']})")
     return "\n".join(lines)
 
 
@@ -264,11 +282,11 @@ Return JSON only, in exactly this shape:
   "teams": [{"team_id": <team_id from STANDINGS>, "verdict": "2-4 word label, e.g. 'Legit Contender', 'Fraud Alert', 'Dumpster Fire', 'Sneaky Good', 'Pray For Him'",
              "trend": "up" | "down" | "steady",
              "body": "3-4 sentences: is this team actually good or do they suck, and are things looking up or going to shit? Roast accordingly."}],
-  "awards": [{"name": "crude award name", "team": "team name", "blurb": "1-2 sentences"}],
+  "previews": [{"game": <index from NEXT WEEK>, "title": "short trash-talk title", "body": "3-5 sentences hyping and roasting both sides, then call a winner"}],
   "power_take": "2-3 sentences on the standings picture",
   "signoff": "one-line closer that goes for the throat"
 }
-Write a recap for every game and a report for every team. Give 3 or 4 awards."""
+Write a recap for every game, a report for every team, and a preview for every NEXT WEEK matchup."""
 
 
 def write_copy(data):
@@ -334,6 +352,13 @@ def render(data, copy, fragment=False):
         if isinstance(idx, int) and 0 <= idx < len(games):
             recaps.append({**r, "g": games[idx]})
 
+    upcoming = data.get("upcoming", [])
+    previews = []
+    for r in copy.get("previews", []):
+        idx = r.get("game")
+        if isinstance(idx, int) and 0 <= idx < len(upcoming):
+            previews.append({**r, "u": upcoming[idx]})
+
     by_id = {t["id"]: t for t in data["standings"]}
     reports = {}
     for r in copy.get("teams", []):
@@ -347,7 +372,7 @@ def render(data, copy, fragment=False):
                             "trend": trend if trend in ("up", "down", "steady") else "steady"}
     team_reports = [reports[t["id"]] for t in data["standings"] if t["id"] in reports]
 
-    ctx = dict(d=data, c=copy, recaps=recaps, archive=archive, team_reports=team_reports,
+    ctx = dict(d=data, c=copy, recaps=recaps, archive=archive, team_reports=team_reports, previews=previews,
                generated=datetime.now(timezone.utc).strftime("%b %d, %Y"))
     tpl = env.get_template("newsletter.html.j2")
     if fragment:
