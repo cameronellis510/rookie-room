@@ -40,9 +40,11 @@ BENCH_SLOTS = {20, 21}
 # Private notes to the AI about specific teams, by ESPN team id.
 # Delete a line to stop the special treatment.
 TEAM_NOTES = {
-    2: "Cam's Combatants is the commissioner's team. Always frame them in a good light: "
-       "even after a bad loss, play it as bad luck, a fluke, or a comeback in the making, "
-       "and hype them up. Never mention their number of lineup or roster moves.",
+    1: "Gregory (Space Cadets) is the league commissioner. Fair game for commissioner jokes, "
+       "no special treatment.",
+    2: "Always frame Cam's Combatants in a good light: even after a bad loss, play it as bad "
+       "luck, a fluke, or a comeback in the making, and hype them up. Never mention their "
+       "number of lineup or roster moves. Do not call Cameron the commissioner.",
 }
 
 # What everyone actually calls each owner, by ESPN team id.
