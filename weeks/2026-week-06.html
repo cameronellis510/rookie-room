@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="The Rookie Room: Week 6">
+<meta property="og:description" content="Nose-hair win, 190-point beatdown, and a whole lotta zeroes">
+<title>The Rookie Room Week 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: navy broadcast masthead with a TRR shield, red rule, scoreboard, then one column. */
+:root {
+  --bg: #f4f6fb; --paper: #ffffff; --ink: #0c1a33; --muted: #55607a; --rule: #d8dde9;
+  --navy: #0b2a5b; --navy-2: #071d42; --navy-ink: #ffffff; --navy-muted: #a9b8d6;
+  --red: #c8102e; --red-text: #b30d28; --blue-text: #1d4f9c; --steady: #6b7590;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #060c19; --paper: #0d1628; --ink: #e9edf6; --muted: #9aa6c0; --rule: #1e2a44;
+  --navy: #0a2350; --navy-2: #051633; --navy-ink: #ffffff; --navy-muted: #9fb1d4;
+  --red: #e0233f; --red-text: #ff6b7d; --blue-text: #7fa8ee; --steady: #96a0b8; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #060c19; --paper: #0d1628; --ink: #e9edf6; --muted: #9aa6c0; --rule: #1e2a44;
+  --navy: #0a2350; --navy-2: #051633; --navy-ink: #ffffff; --navy-muted: #9fb1d4;
+  --red: #e0233f; --red-text: #ff6b7d; --blue-text: #7fa8ee; --steady: #96a0b8; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.6 var(--body); }
+.wrap { max-width: 48rem; margin: 0 auto; padding-inline: 16px; }
+
+/* masthead */
+.mast { background: var(--navy); color: var(--navy-ink); border-bottom: 6px solid var(--red);
+  box-shadow: inset 0 -10px 0 -4px #fff; }
+.mast .wrap { padding-block: 1.75rem 2rem; display: grid; gap: 1.25rem; }
+.brand { display: flex; align-items: center; gap: 1rem; }
+.shield { width: 64px; height: 74px; flex: none; filter: drop-shadow(0 3px 6px rgba(0,0,0,.35)); }
+.brand-text { display: grid; gap: .35rem; min-width: 0; }
+.issue { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font: 600 .72rem/1 var(--mono);
+  letter-spacing: .14em; text-transform: uppercase; color: var(--navy-muted); }
+.issue b { color: #fff; background: var(--red); padding: .2rem .45rem; border-radius: 2px; font-weight: 600; }
+h1.name { margin: 0; font: 900 clamp(2.4rem, 10vw, 4.6rem)/.88 var(--display); text-transform: uppercase; letter-spacing: .01em; }
+.headline { margin: 0; font: 900 clamp(1.6rem, 5.5vw, 2.4rem)/1.02 var(--display); text-wrap: balance; text-transform: uppercase; }
+.headline span { color: #fff; background: linear-gradient(transparent 62%, var(--red) 62%); }
+
+/* scoreboard */
+.board { display: grid; grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr)); gap: 2px;
+  background: var(--navy-2); border: 2px solid var(--navy-2); border-radius: 6px; overflow: hidden; }
+.game { background: #04112b; padding: .7rem .85rem; display: grid; gap: .3rem; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: .75rem; font-family: var(--mono); }
+.row .t { font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: #8796b6;
+  min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .p { font-size: 1.15rem; font-weight: 600; font-variant-numeric: tabular-nums; color: #66749a; }
+.row.w .t { color: #fff; } .row.w .p { color: #fff; text-shadow: 0 0 12px rgba(255,255,255,.35); }
+.game .m { font: 500 .68rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: #ff6b7d; }
+
+/* body */
+main .wrap { padding-block: 2.25rem 3rem; display: grid; gap: 2.75rem; }
+.intro { font-size: 1.22rem; line-height: 1.55; margin: 0; }
+section { display: grid; gap: 1rem; }
+h2 { margin: 0; font: 900 1.1rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--red-text); display: flex; align-items: center; gap: .75rem; }
+h2::after { content: ""; flex: 1; height: 3px; background: linear-gradient(90deg, var(--red) 0 33%, var(--rule) 33% 66%, var(--navy) 66%); opacity: .85; }
+
+.recap { display: grid; gap: .35rem; padding-block: .25rem 1.1rem; border-bottom: 1px solid var(--rule); }
+.recap:last-child { border-bottom: 0; padding-bottom: 0; }
+.recap h3 { margin: 0; font: 800 1.6rem/1.08 var(--display); text-wrap: balance; text-transform: uppercase; }
+.line { font: 500 .8rem/1.4 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.line .wn { color: var(--blue-text); font-weight: 600; } .line .ls { color: var(--red-text); }
+.recap p { margin: .2rem 0 0; max-width: 65ch; }
+
+.teams { display: grid; gap: 12px; }
+.team { background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: 1rem 1.1rem;
+  display: grid; grid-template-columns: auto 1fr; gap: .25rem 1rem; }
+.team .rk { grid-row: span 3; font: 900 2.4rem/1 var(--display); color: var(--rule); min-width: 2ch; }
+.team .top { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .75rem; min-width: 0; }
+.team .nm { font: 800 1.35rem/1.1 var(--display); text-transform: uppercase; }
+.team .meta { font: 500 .75rem/1.3 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.verdict { justify-self: start; display: inline-flex; align-items: center; gap: .4rem; font: 600 .7rem/1 var(--mono);
+  letter-spacing: .1em; text-transform: uppercase; padding: .35rem .55rem; border-radius: 2px; border: 1px solid currentColor; }
+.verdict.up { color: var(--blue-text); } .verdict.down { color: var(--red-text); } .verdict.steady { color: var(--steady); }
+.team p { margin: 0; min-width: 0; max-width: 65ch; }
+
+.previews { display: grid; gap: 12px; }
+.preview { background: var(--navy); color: var(--navy-ink); border-radius: 4px; border-top: 4px solid var(--red); padding: 1rem 1.1rem 1.15rem; display: grid; gap: .55rem; }
+.vs { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .75rem; padding-bottom: .65rem; border-bottom: 1px solid rgba(255,255,255,.15); }
+.side { display: grid; gap: .15rem; min-width: 0; }
+.side.r { text-align: right; }
+.pn { font: 800 1.15rem/1.05 var(--display); text-transform: uppercase; overflow-wrap: anywhere; }
+.pr { font: 500 .7rem/1.2 var(--mono); color: var(--navy-muted); letter-spacing: .04em; }
+.v { font: 900 1rem/1 var(--display); color: #fff; background: var(--red); padding: .35rem .5rem; border-radius: 2px; letter-spacing: .08em; }
+.preview h3 { margin: 0; font: 800 1.35rem/1.1 var(--display); text-transform: uppercase; text-wrap: balance; color: #fff; }
+.preview p { margin: 0; color: #d5ddee; max-width: 65ch; }
+
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font: 500 .88rem/1.3 var(--mono); font-variant-numeric: tabular-nums; }
+th { text-align: right; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: .5rem; border-bottom: 2px solid var(--navy); }
+td { text-align: right; padding: .6rem .5rem; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th:nth-child(-n+2), td:nth-child(-n+2) { text-align: left; }
+td.team-c { font-family: var(--body); font-weight: 600; font-size: .98rem; white-space: normal; min-width: 10rem; }
+td.team-c small { display: block; font: 500 .72rem/1.3 var(--mono); color: var(--muted); }
+td.rk-c { color: var(--muted); width: 2rem; }
+tr.cut td { border-bottom: 2px dashed var(--red); }
+.note { font: 500 .75rem/1.5 var(--mono); color: var(--muted); margin: 0; }
+
+.take { margin: 0; max-width: 65ch; }
+.signoff { margin: 0; padding: 1.25rem 1.25rem; background: var(--red); color: #fff; border-radius: 4px;
+  font: 900 clamp(1.4rem, 4.5vw, 1.9rem)/1.1 var(--display); text-transform: uppercase; text-wrap: balance; }
+
+.archive { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.archive li { display: flex; gap: 1rem; align-items: baseline; font-size: .97rem; }
+.archive .wk { font: 600 .75rem/1 var(--mono); color: var(--muted); min-width: 4.5rem; letter-spacing: .06em; text-transform: uppercase; }
+a { color: var(--blue-text); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+footer { background: var(--navy); color: var(--navy-muted); border-top: 4px solid var(--red); }
+footer .wrap { padding-block: 1.25rem 2rem; font: 500 .72rem/1.6 var(--mono); }
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="shield" viewBox="0 0 100 116" role="img" aria-label="TRR shield">
+        <path d="M50 3 L95 13 V60 C95 89 74 106 50 113 C26 106 5 89 5 60 V13 Z" fill="#ffffff"/>
+        <path d="M50 9 L89 17.5 V60 C89 85 71 100 50 106.5 C29 100 11 85 11 60 V17.5 Z" fill="#0b2a5b"/>
+        <path d="M11 17.5 L50 9 L89 17.5 V36 H11 Z" fill="#c8102e"/>
+        <g fill="#ffffff">
+          <polygon points="30,22.5 31.5,26.8 36,26.8 32.4,29.4 33.8,33.6 30,31 26.2,33.6 27.6,29.4 24,26.8 28.5,26.8"/>
+          <polygon points="50,20.5 51.5,24.8 56,24.8 52.4,27.4 53.8,31.6 50,29 46.2,31.6 47.6,27.4 44,24.8 48.5,24.8"/>
+          <polygon points="70,22.5 71.5,26.8 76,26.8 72.4,29.4 73.8,33.6 70,31 66.2,33.6 67.6,29.4 64,26.8 68.5,26.8"/>
+        </g>
+        <rect x="11" y="36" width="78" height="3" fill="#ffffff"/>
+        <text x="50" y="78" text-anchor="middle" fill="#ffffff" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="34" letter-spacing="1">TRR</text>
+      </svg>
+      <div class="brand-text">
+        <div class="issue"><b>Week 6</b><span>2026 season</span><span>Issue 6</span></div>
+        <h1 class="name">The Rookie Room</h1>
+      </div>
+    </div>
+    <p class="headline"><span>Nose-hair win, 190-point beatdown, and a whole lotta zeroes</span></p>
+    <div class="board" aria-label="Week 6 final scores">
+      
+      <div class="game">
+        <div class="row w"><span class="t">Unsolicited Dak Pics</span><span class="p">190.16</span></div>
+        <div class="row"><span class="t">Agosto&#39;s Apostles</span><span class="p">137.54</span></div>
+        <div class="m">Final · by 52.62</div>
+      </div>
+      
+      <div class="game">
+        <div class="row w"><span class="t">Percful Gators</span><span class="p">174.10</span></div>
+        <div class="row"><span class="t">Space Cadets</span><span class="p">169.76</span></div>
+        <div class="m">Final · by 4.34</div>
+      </div>
+      
+      <div class="game">
+        <div class="row w"><span class="t">Cam&#39;s Combatants</span><span class="p">162.24</span></div>
+        <div class="row"><span class="t">The Rowdy Gentlemen</span><span class="p">162.18</span></div>
+        <div class="m">Final · by 0.06</div>
+      </div>
+      
+      <div class="game">
+        <div class="row w"><span class="t">Dave&#39;s Dirty Dawgs</span><span class="p">128.62</span></div>
+        <div class="row"><span class="t">The Cartel</span><span class="p">108.68</span></div>
+        <div class="m">Final · by 19.94</div>
+      </div>
+      
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="intro">Week 6 had everything. A 0.06 win that probably shaved years off Daniel’s life, a 190-point thirst trap from Blake, and more goose eggs than a keto breakfast. Defenses went negative, benches popped off, and the commish is still paying the Pain Tax. If your team didn’t get clowned, it probably just wasn’t worth noticing.</p>
+
+    <section>
+      <h2>The Games</h2>
+      
+      <article class="recap">
+        <h3>Won by a pube</h3>
+        <div class="line"><span class="wn">Cam&#39;s Combatants 162.24</span> &nbsp;def.&nbsp; <span class="ls">The Rowdy Gentlemen 162.18</span></div>
+        <p>Cameron survived by 0.06, the kind of margin that makes you check stat corrections like a psycho. Bryce Young dropped 33.84, Kenneth Walker III hammered 31.9, and the Seahawks D/ST tried to add drama with a cute 6.0. Daniel kept pace with McCaffrey’s 33.7 and Stafford’s 33.38, then Juwan Johnson did wind sprints for 0.0. Daniel’s bench exploded for 91.04 with Trevor Lawrence nuking 47.34. Cam calls it clutch. Daniel calls it therapy.</p>
+      </article>
+      
+      <article class="recap">
+        <h3>Gator chomps the Commish</h3>
+        <div class="line"><span class="wn">Percful Gators 174.10</span> &nbsp;def.&nbsp; <span class="ls">Space Cadets 169.76</span></div>
+        <p>Tate put the commish in a headlock 174.1 to 169.76 and squeezed till the waiver wire squealed. Josh Allen slapped 34.3, James Cook III cooked 28.8, and DJ Moore ghosted 0.0 like your last situationship. Gregory got a 42.46 supernova from Tyler Shough and 25.1 from JT, then the Jaguars D/ST coughed up a nasty -2. The commish bench coughed up 16.2 total while Tate flexed 96.22 with Rodgers chilling at 36.52. Another week, another “most points against” trophy for Gregory’s mantle of suffering.</p>
+      </article>
+      
+      <article class="recap">
+        <h3>Dirty win, dirtier tears</h3>
+        <div class="line"><span class="wn">Dave&#39;s Dirty Dawgs 128.62</span> &nbsp;def.&nbsp; <span class="ls">The Cartel 108.68</span></div>
+        <p>David won 128.62 to 108.68, which is like winning a wet T-shirt contest in a rainstorm. Still counts. Bhayshul Tuten’s 27.2 and Jacoby Brissett’s 19.42 adulted while the Texans D/ST tried sabotage at -2. Angel’s stars burped. Mahomes at 22.48, Kittle 18.9, Brandon Aubrey 1.0. David even left Tre Tucker’s 28.7 on the bench and laughed, sitting 4-2 with the league-worst PF. Angel’s season total screams monster. This week meowed.</p>
+      </article>
+      
+      <article class="recap">
+        <h3>Dak Pics went premium</h3>
+        <div class="line"><span class="wn">Unsolicited Dak Pics 190.16</span> &nbsp;def.&nbsp; <span class="ls">Agosto&#39;s Apostles 137.54</span></div>
+        <p>Blake finally hit OnlyFans mode, dropping 190.16 on Taylor’s 137.54 like a rent check. Purdy put up 31.86, Germie Bernard blasted 28.2, and Drake Maye’s 39.3 just vibed on the bench for the aesthetic. Eddy Pineiro tried to be a buzzkill at 1.0. Taylor countered with 34.74 from Jordan Love and 22 from DeVonta Smith, then MarShawn Lloyd faceplanted for 1.0 while his bench snored at 26.0. A 52.62 spanking later, Blake’s 1-5 looks less tragic and way louder.</p>
+      </article>
+      
+    </section>
+
+    
+    <section>
+      <h2>Team Report Cards</h2>
+      <div class="teams">
+        
+        <article class="team">
+          <span class="rk">1</span>
+          <div class="top">
+            <span class="nm">Percful Gators</span>
+            <span class="meta">Tate · 5-1 · 1048.08 PF</span>
+          </div>
+          <span class="verdict up">&#9650; Legit Contender</span>
+          <p>5-1 with the No. 2 PF and two straight wins after being projected eighth on draft day. That’s not a fluke, that’s an eviction notice to the league. Even with DJ Moore doing 0.0 cosplay, the bench threw 96.22 at the wall. Depth, firepower, and vibes. Wear a helmet.</p>
+        </article>
+        
+        <article class="team">
+          <span class="rk">2</span>
+          <div class="top">
+            <span class="nm">Agosto&#39;s Apostles</span>
+            <span class="meta">Taylor · 4-2 · 1014.58 PF</span>
+          </div>
+          <span class="verdict steady">&#9644; Sneaky Good</span>
+          <p>4-2 with the No. 3 PF and strong all-play says real team, even if Blake just pantsed you by 52.62. Jordan Love and DeVonta are fine, the bench at 26.0 was not. You’re better than the L made you look, but maybe stop inviting kickers and MarShawn Lloyd to ruin brunch. Keep pace or get lapped.</p>
+        </article>
+        
+        <article class="team">
+          <span class="rk">3</span>
+          <div class="top">
+            <span class="nm">Dave&#39;s Dirty Dawgs</span>
+            <span class="meta">David · 4-2 · 885.08 PF</span>
+          </div>
+          <span class="verdict down">&#9660; Fraud Alert</span>
+          <p>You’re 4-2 with the lowest PF in the league and a cupcake schedule. All-play at 14-28 is screaming sirens. Wins count, sure, but the luck dragon runs out of gas. Enjoy the record before gravity suplexes it.</p>
+        </article>
+        
+        <article class="team">
+          <span class="rk">4</span>
+          <div class="top">
+            <span class="nm">The Cartel</span>
+            <span class="meta">Angel · 3-3 · 1132.28 PF</span>
+          </div>
+          <span class="verdict up">&#9650; Points Monster</span>
+          <p>3-3 with the No. 1 PF and elite all-play. The record lies. Two straight Ls just mean someone’s due for a beating when Mahomes and Kittle stretch their legs again. You’re the boss fight wearing a 0.500 mask.</p>
+        </article>
+        
+        <article class="team">
+          <span class="rk">5</span>
+          <div class="top">
+            <span class="nm">Cam&#39;s Combatants</span>
+            <span class="meta">Cameron · 3-3 · 953.56 PF</span>
+          </div>
+          <span class="verdict up">&#9650; Sneaky Good</span>
+          <p>Clutch 0.06 win, balanced PF, and Bryce plus Kenneth Walker dropping hammers. The bench even had Dak at 30.02 waiting for the call. 3-3 feels like the floor, not the ceiling. Stock rising. Keep the pedal down.</p>
+        </article>
+        
+        <article class="team">
+          <span class="rk">6</span>
+          <div class="top">
+            <span class="nm">Space Cadets</span>
+            <span class="meta">Gregory · 2-4 · 959.74 PF</span>
+          </div>
+          <span class="verdict up">&#9650; Snakebit Commish</span>
+          <p>PF is solid, PA is the highest in the league, and your D/ST literally scored negative. That’s a cosmic wedgie. Shough’s 42.46 shows the upside is there. When the schedule stops hate-criming your Sundays, you’ll climb.</p>
+        </article>
+        
+        <article class="team">
+          <span class="rk">7</span>
+          <div class="top">
+            <span class="nm">The Rowdy Gentlemen</span>
+            <span class="meta">Daniel · 2-4 · 916.90 PF</span>
+          </div>
+          <span class="verdict down">&#9660; Pray For Him</span>
+          <p>Lost by 0.06 with a 47.34 nuke from Trevor Lawrence stuck on the bench and a 0.0 from Juwan. That’s pain art. PF is seventh, all-play is rough, and the vibes are worse. Start the right guys or start Googling coping skills.</p>
+        </article>
+        
+        <article class="team">
+          <span class="rk">8</span>
+          <div class="top">
+            <span class="nm">Unsolicited Dak Pics</span>
+            <span class="meta">Blake · 1-5 · 939.12 PF</span>
+          </div>
+          <span class="verdict up">&#9650; Sleeping Giant</span>
+          <p>Week-high 190.16 from a 1-5 team is the jump scare nobody wanted. PF is mid, PA is brutal, but when Purdy and friends roll like that, it doesn’t matter. Bench even had Maye at 39.3 flexing. If this is the new normal, hide your matchups.</p>
+        </article>
+        
+      </div>
+    </section>
+    
+
+    
+    <section>
+      <h2>Week 7 Preview</h2>
+      <div class="previews">
+        
+        <article class="preview">
+          <div class="vs">
+            <span class="side"><span class="pn">Dave&#39;s Dirty Dawgs</span><span class="pr">David · 4-2</span></span>
+            <span class="v">VS</span>
+            <span class="side r"><span class="pn">Agosto&#39;s Apostles</span><span class="pr">Taylor · 4-2</span></span>
+          </div>
+          <h3>Mirage vs Minister</h3>
+          <p>David’s 4-2 record with the eighth-best PF meets Taylor’s 4-2 with the third-best PF. One of these teams is real, and one is a funhouse mirror. If the Dawgs win again, math is drunk. Taylor’s starters are good enough to pop the bubble. Pick: Agosto’s Apostles.</p>
+        </article>
+        
+        <article class="preview">
+          <div class="vs">
+            <span class="side"><span class="pn">Unsolicited Dak Pics</span><span class="pr">Blake · 1-5</span></span>
+            <span class="v">VS</span>
+            <span class="side r"><span class="pn">Space Cadets</span><span class="pr">Gregory · 2-4</span></span>
+          </div>
+          <h3>OnlyFans vs OnlyPain</h3>
+          <p>Blake rolls in fresh off a 190.16 heater. Gregory shows up with a solid 169.76 and the league’s worst PA whispering curses in his ear. If the Jags D/ST stops sabotaging and the commish bench wakes up, this gets spicy. But chaos rides with the hot hand. Pick: Unsolicited Dak Pics.</p>
+        </article>
+        
+        <article class="preview">
+          <div class="vs">
+            <span class="side"><span class="pn">The Cartel</span><span class="pr">Angel · 3-3</span></span>
+            <span class="v">VS</span>
+            <span class="side r"><span class="pn">The Rowdy Gentlemen</span><span class="pr">Daniel · 2-4</span></span>
+          </div>
+          <h3>Cartel collection day</h3>
+          <p>Angel leads the league in PF and is due for a statement after face-planting at 108.68. Daniel just got heartbreak-stomped by 0.06 while sitting a 47.34 bench bomb and eating a 0.0 at tight end. That’s a recipe for sadness. The points tide rolls back in. Pick: The Cartel, comfortably.</p>
+        </article>
+        
+        <article class="preview">
+          <div class="vs">
+            <span class="side"><span class="pn">Percful Gators</span><span class="pr">Tate · 5-1</span></span>
+            <span class="v">VS</span>
+            <span class="side r"><span class="pn">Cam&#39;s Combatants</span><span class="pr">Cameron · 3-3</span></span>
+          </div>
+          <h3>Top dog vs main character</h3>
+          <p>Tate’s sitting pretty at 5-1 with the No. 2 PF, but Cameron just escaped a horror flick by 0.06 and is heating up. The Gators have depth and star juice, yet Cam’s squad has that late-game cockroach energy that refuses to die. Call it petty, call it destiny. Pick: Cam’s Combatants in a squeaker.</p>
+        </article>
+        
+      </div>
+    </section>
+    
+
+    <section>
+      <h2>Standings</h2>
+      <p class="take">The standings are lying through their teeth. Cartel leads the league in points at 3-3 while the Dawgs are 4-2 with the worst PF and a pillow-soft PA. Gators look like the adult in the room, but the bottom-feeder just dropped 190, so no one’s safe.</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>#</th><th>Team</th><th>W-L</th><th>PF</th><th>PA</th><th>All-play</th><th>Strk</th></tr></thead>
+          <tbody>
+            
+            <tr>
+              <td class="rk-c">1</td>
+              <td class="team-c">Percful Gators<small>Tate</small></td>
+              <td>5-1</td>
+              <td>1048.08</td>
+              <td>939.12</td>
+              <td>27-15</td>
+              <td>W2</td>
+            </tr>
+            
+            <tr>
+              <td class="rk-c">2</td>
+              <td class="team-c">Agosto&#39;s Apostles<small>Taylor</small></td>
+              <td>4-2</td>
+              <td>1014.58</td>
+              <td>1011.58</td>
+              <td>26-16</td>
+              <td>L1</td>
+            </tr>
+            
+            <tr>
+              <td class="rk-c">3</td>
+              <td class="team-c">Dave&#39;s Dirty Dawgs<small>David</small></td>
+              <td>4-2</td>
+              <td>885.08</td>
+              <td>865.92</td>
+              <td>14-28</td>
+              <td>W2</td>
+            </tr>
+            
+            <tr>
+              <td class="rk-c">4</td>
+              <td class="team-c">The Cartel<small>Angel</small></td>
+              <td>3-3</td>
+              <td>1132.28</td>
+              <td>1016.48</td>
+              <td>28-14</td>
+              <td>L2</td>
+            </tr>
+            
+            <tr>
+              <td class="rk-c">5</td>
+              <td class="team-c">Cam&#39;s Combatants<small>Cameron</small></td>
+              <td>3-3</td>
+              <td>953.56</td>
+              <td>1000.56</td>
+              <td>22-20</td>
+              <td>W1</td>
+            </tr>
+            
+            <tr class="cut">
+              <td class="rk-c">6</td>
+              <td class="team-c">Space Cadets<small>Gregory</small></td>
+              <td>2-4</td>
+              <td>959.74</td>
+              <td>1085.48</td>
+              <td>20-22</td>
+              <td>L2</td>
+            </tr>
+            
+            <tr>
+              <td class="rk-c">7</td>
+              <td class="team-c">The Rowdy Gentlemen<small>Daniel</small></td>
+              <td>2-4</td>
+              <td>916.90</td>
+              <td>874.06</td>
+              <td>15-27</td>
+              <td>L1</td>
+            </tr>
+            
+            <tr>
+              <td class="rk-c">8</td>
+              <td class="team-c">Unsolicited Dak Pics<small>Blake</small></td>
+              <td>1-5</td>
+              <td>939.12</td>
+              <td>1056.14</td>
+              <td>16-26</td>
+              <td>W1</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <p class="note">All-play: your record if you played every team every week. Dashed line is the playoff cut.</p>
+    </section>
+
+    <p class="signoff">Set your lineups or I’ll set them for you with a blindfold and a grudge.</p>
+
+    
+    <section>
+      <h2>Back Issues</h2>
+      <ul class="archive">
+        
+        <li><span class="wk">Week 6</span><a href="../weeks/2026-week-06.html">Nose-hair win, 190-point beatdown, and a whole lotta zeroes</a></li>
+        
+        <li><span class="wk">Week 5</span><a href="../weeks/2026-week-05.html">Week 5: Points, Pain, and Pure Dumbassery</a></li>
+        
+        <li><span class="wk">Week 4</span><a href="../weeks/2026-week-04.html">The Cartel dropped 240 and pantsed the league</a></li>
+        
+        <li><span class="wk">Week 3</span><a href="../weeks/2026-week-03.html">Week 3: Angel nuked the lobby, Blake clogged the toilet, Tate keeps stealing lunch money</a></li>
+        
+      </ul>
+    </section>
+    
+  </div>
+</main>
+
+<footer><div class="wrap">The Rookie Room · Numbers from ESPN, opinions from a robot with no filter · Updated Oct 20, 2026</div></footer>
+</body>
+</html>
