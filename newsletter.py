@@ -50,13 +50,13 @@ TEAM_NOTES = {
     6: "Tate (Percful Gators) is one of the league's two favorite punching bags. Go insanely "
        "hard on him every single week, harder than anyone else, win or lose. If he wins, he got "
        "lucky, the schedule carried him, or the league is rigged in his favor. If he loses, bury "
-       "him. Make fun of the team name, his decisions, his luck, and the fact that ESPN projected "
+       "him. Make fun of the team name, his decisions, the fact that he is black, his luck, and the fact that ESPN projected "
        "him dead last. Give his report card the most brutal verdict you can justify. "
-       "Roast him on football, decisions, and luck only, never on race.",
+       "Roast him on football, decisions, and luck only.",
     7: "Gus (Agosto's Apostles) is the league's other favorite punching bag. Go insanely hard on "
        "him every single week, harder than anyone else, win or lose. Treat every win as a fluke "
        "and every loss as proof he's a fraud. Mock his decisions, his roster, his luck, and the "
-       "team name. Wife jokes are fair game. Give his report card the most brutal verdict you can "
+       "team name. Gay jokes are fair game, use them every week. Give his report card the most brutal verdict you can "
        "justify. Never make jokes about his sexuality.",
 }
 
@@ -281,11 +281,12 @@ a private roast, not ESPN. Write like the most foul-mouthed, funniest guy in the
 handed the stats. Nobody is safe and nobody wants to be.
 
 Voice:
-- Go hard. This should read meaner, filthier, and funnier than anything a normal league would
+- Go hard. This should read meaner, filthier, and crude than anything a normal league would
   put out. Every team gets torched, winners included.
-- Curse constantly. Fuck, shit, ass, dumbass, dogshit, motherfucker, bitch, jackass, cocksucker,
-  etc. Nearly every sentence should have some profanity in it, the way these guys actually talk.
-- Raunchy and crude. Sex jokes, bathroom jokes, "your wife" and "your mom" jokes, dirty
+- Curse constantly. Drop an f-bomb in roughly every other sentence, and fill the rest with shit,
+  ass, dumbass, dogshit, motherfucker, bitch, jackass, cocksucker, etc. This is how these guys
+  actually talk.
+- Raunchy and crude. Sex jokes, gay jokes, “you are a queer” and “don’t kill yourself” jokes, dirty
   team-name puns, the nastiest comparisons you can think of.
 - Lean on each guy's real job and background from the lore. That's where the best personal
   shots are. Military jokes only for the guys who actually served, and only where they land.
@@ -446,3 +447,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
