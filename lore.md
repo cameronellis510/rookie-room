@@ -4,20 +4,25 @@ The AI reads this every week before writing. Pulled from the group chat.
 Use these bits whenever they fit. Don't cram every one into every issue, rotate them.
 
 ## Who's who
-The guys served together as Army infantry. Angel is a Marine now, Greg is Space Force now,
-and everybody gives them shit for it.
+Mixed crew. Cameron and Danny were Army infantry together in Hawaii (Cameron was Bravo company,
+Danny was Charlie). Tate was an Army fueler, which the infantry guys never let him forget.
+Greg is in the Space Force and Angel is a Marine, both still serving. Gus, David, and Blake
+never served. Military jokes only fit the guys who served, and keep them rare.
 
 ### Greg (Space Cadets), commissioner, "The Big Yahu"
 - First-year commissioner. Took over from Cameron this season. Runs the league like a dictator.
 - Set the draft for the wrong time because he was in Tennessee and didn't realize he was on
   Central time. Rookie commish move.
 - Scored about 241 points in Week 1, his very first game as commissioner. Suspicious as hell.
-- Space Force. Did gas mask fit testing "in space." Swears it's MOPP 5 up there.
+- Space Force, works in intel, currently overseas. The surveillance state jokes write
+  themselves: he's reading your texts, he knows your lineup before you do, he's watching.
+- Did gas mask fit testing "in space." Swears it's MOPP 5 up there.
 - Wanted the league to move to Sleeper. Was overruled.
 - Sends dramatic "reminder" announcements to the league like a state press office.
 - Gus called the newsletter "state run propaganda." Greg is the state.
 
 ### Cameron (Cam's Combatants), former commissioner
+- Army infantry vet, Bravo company, served in Hawaii.
 - Defending league champion. Beat Tate in last year's championship.
 - Stepped down as commissioner "voluntarily" to "find his love for the game again."
 - Diehard Panthers fan. Thinks Bryce Young (BY9) is a franchise QB and will win a Super Bowl.
@@ -27,6 +32,7 @@ and everybody gives them shit for it.
 - "I built this league brick by brick."
 
 ### Tate (Percful Gators), "Daddy Gator"
+- Former Army fueler, now out. Currently an Amazon delivery driver.
 - Lost last year's championship to Cameron. This year's Cam vs Tate games are the rematch,
   and the whole chat treats it as rivalry week. #TateHateWeek
 - Drafted Younghoe Koo on draft night while he was a free agent with no NFL team, and Tate
@@ -37,6 +43,7 @@ and everybody gives them shit for it.
 - Was projected dead last by ESPN. Eats rice cakes with his feet up while talking shit.
 
 ### Gus (Agosto's Apostles), also "Gustopher"
+- Never served. He's a pilot who flies private for some rich guy. Glorified chauffeur with wings.
 - Every time a guy on his bench goes off, he says "I almost played him." Every single time.
   Admits he second guesses everything and calls himself a shitty coach.
 - Brock Bowers got hurt right away. Gus made an "Armageddon bet" that he'd quit this world
@@ -46,7 +53,9 @@ and everybody gives them shit for it.
 - Always offering trades first. "Fuck you I already offered."
 
 ### Angel (The Cartel), "Unc"
-- The Marine. Just got promoted. Wants to be Sergeant Major of the Marine Corps.
+- The Marine. Drives trucks in the Marine Corps, stationed in Hawaii. Thinks that's cool.
+  It isn't, Cameron and Danny were stationed there first.
+- Just got promoted. Wants to be Sergeant Major of the Marine Corps.
   The chat says math is hard for Marines and his crew eats crayons.
 - Was getting hammered during the draft and everybody laughed at his picks. Then his team
   turned into the 2013 Seahawks, Legion of Boom. He out drafted everyone.
@@ -57,7 +66,8 @@ and everybody gives them shit for it.
 - Says David is his kryptonite. "Fuck Bama."
 
 ### Danny (The Rowdy Gentlemen), also "Dan"
-- The barber. Almost cut Jon Jones's hair.
+- Army infantry vet, Charlie company, served in Hawaii with Cameron. Now he's a barber.
+  Almost cut Jon Jones's hair.
 - Lives in Baton Rouge, the scariest possible place to lose the punishment.
 - Rams fan. Still mad Sean McVay "called uncle" in a game.
 - King of brutal close losses. Lost by about a point early in the year, then lost another by
@@ -65,6 +75,7 @@ and everybody gives them shit for it.
 - Said "at this point I'm just gonna beat my own ass for sucking this year."
 
 ### David (Dave's Dirty Dawgs), "Davy"
+- Never served. Installs dishwashers, ovens, and water heaters for a living.
 - Calls Cameron "pookie."
 - His "front office" is always "reaching out" to people about trades.
 - "Dawgs went to space before man."
@@ -72,6 +83,8 @@ and everybody gives them shit for it.
 - Started 0-4 last season.
 
 ### Blake (Unsolicited Dak Pics), the rookie
+- Never served. Works at an investment firm, trying to become a financial advisor but isn't
+  one yet. Can't manage a fantasy roster, wants to manage your retirement.
 - First year in the league.
 - Drake Maye truther. Promised Maye would throw "8 touchdowns and 700 yards."
 - Started 0-4. "Motherfucker I hate fantasy football."
